@@ -1,5 +1,6 @@
 package com.gumaso.ScreenMatch.controller;
 
+import com.gumaso.ScreenMatch.dto.EpisodioDTO;
 import com.gumaso.ScreenMatch.dto.SerieDTO;
 import com.gumaso.ScreenMatch.service.SerieService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,5 +33,9 @@ public class SerieController {
     public SerieDTO obterPorId(@PathVariable Long id){
         return service.obterSeriePorId(id);
 
+    }
+    @GetMapping("{id}/temporadas/todas/")
+    public List<EpisodioDTO> obterTodasTemporadas(@PathVariable Long id){
+        return service.obterTodasAsTemporadas(id);
     }
 }
