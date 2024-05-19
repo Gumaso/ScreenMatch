@@ -2,6 +2,7 @@ package com.gumaso.ScreenMatch.service;
 
 import com.gumaso.ScreenMatch.dto.EpisodioDTO;
 import com.gumaso.ScreenMatch.dto.SerieDTO;
+import com.gumaso.ScreenMatch.models.Categoria;
 import com.gumaso.ScreenMatch.models.Serie;
 import com.gumaso.ScreenMatch.repository.SerieRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -55,5 +56,17 @@ public class SerieService {
             return objSerie.getEpisodioLista().stream().map(obj -> new EpisodioDTO(obj.getTemporada(), obj.getNumeroEp(), obj.getTituloEp())).collect(Collectors.toList());
         }
         return null;
+    }
+
+    public List<EpisodioDTO> obterTemporadasPorNumero(Long id, Long numero) {
+        return repositorio.obterEpisodiosPorTemporada(id, numero)
+                .stream()
+                .map(e -> new EpisodioDTO(e.getTemporada(), e.getNumeroEp(), e.getTituloEp()))
+                .collect(Collectors.toList());
+    }
+
+    public List<SerieDTO> obterSeriesPorCategoria(String nomeGenero) {
+        Categoria categoria = Categoria.fromStringPortugues(nomeGenero);
+        return converteDadosSerie(repositorio.findByGenero(categoria));
     }
 }
