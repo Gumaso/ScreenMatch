@@ -2,7 +2,6 @@ package com.gumaso.ScreenMatch.principal;
 
 
 import com.gumaso.ScreenMatch.models.*;
-import com.gumaso.ScreenMatch.repository.EpisodioRepository;
 import com.gumaso.ScreenMatch.repository.SerieRepository;
 import com.gumaso.ScreenMatch.service.ConsumoAPI;
 import com.gumaso.ScreenMatch.service.ConverterDados;
@@ -20,7 +19,6 @@ public class Principal {
     private List<DadosSerie> dadosSerieLista = new ArrayList<>();
 
     private SerieRepository serieRepository;
-    private EpisodioRepository episodioRepository;
     private List<Serie> serieLista;
     private Optional<Serie> serieProcurada;
 
@@ -103,7 +101,7 @@ public class Principal {
 
 
     private void buscarTop5Series() {
-        List<Serie> top5Series = serieRepository.findTop3ByOrderByAvaliacaoDesc();
+        List<Serie> top5Series = serieRepository.findTop5ByOrderByAvaliacaoDesc();
         top5Series.stream().forEach(obj ->
                 System.out.println(String.format("""
                         Nome da serie: %s
