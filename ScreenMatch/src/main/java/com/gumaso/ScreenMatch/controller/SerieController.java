@@ -21,4 +21,5 @@ public class SerieController {
                 objSerie.getGenero(), objSerie.getAtores(), objSerie.getPoster(),
                 objSerie.getSinopse())).collect(Collectors.toList());
     }
+    
 }
