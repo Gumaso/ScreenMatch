@@ -1,4 +1,4 @@
-package com.gumaso.ScreenMatch.services;
+package com.gumaso.ScreenMatch.service;
 
 import java.io.IOException;
 import java.net.URI;

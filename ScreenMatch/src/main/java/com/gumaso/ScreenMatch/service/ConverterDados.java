@@ -1,4 +1,4 @@
-package com.gumaso.ScreenMatch.services;
+package com.gumaso.ScreenMatch.service;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;

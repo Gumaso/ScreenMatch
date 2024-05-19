@@ -1,4 +1,4 @@
-package com.gumaso.ScreenMatch.services;
+package com.gumaso.ScreenMatch.service;
 
 public interface IConverteDados {
     <T> T obterDados(String json, Class<T> tClass);

@@ -4,8 +4,8 @@ package com.gumaso.ScreenMatch.principal;
 import com.gumaso.ScreenMatch.models.*;
 import com.gumaso.ScreenMatch.repository.EpisodioRepository;
 import com.gumaso.ScreenMatch.repository.SerieRepository;
-import com.gumaso.ScreenMatch.services.ConsumoAPI;
-import com.gumaso.ScreenMatch.services.ConverterDados;
+import com.gumaso.ScreenMatch.service.ConsumoAPI;
+import com.gumaso.ScreenMatch.service.ConverterDados;
 
 import java.util.*;
 import java.util.stream.Collectors;
