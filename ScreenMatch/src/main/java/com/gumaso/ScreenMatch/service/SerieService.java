@@ -28,4 +28,8 @@ public class SerieService {
                 objSerie.getGenero(), objSerie.getAtores(), objSerie.getPoster(),
                 objSerie.getSinopse())).collect(Collectors.toList());
     }
+
+    public List<SerieDTO> obterUltimosLancamentos() {
+        return converteDadosSerie(repositorio.encontrarEpisodiosMaisRecentes());
+    }
 }
